@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSP Integration - Sangeet Distribution Admin</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Admin</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="users.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    User Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="catalog.html" class="sidebar-link">
+                    <i class="fas fa-music sidebar-icon"></i>
+                    Catalog Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="dsp-integration.html" class="sidebar-link active">
+                    <i class="fas fa-plug sidebar-icon"></i>
+                    DSP Integration
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalty Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="fraud.html" class="sidebar-link">
+                    <i class="fas fa-shield-alt sidebar-icon"></i>
+                    Fraud Detection
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    Release Approval
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="reports.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar sidebar-icon"></i>
+                    Reports
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-primary rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="admin-initials">AD</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="admin-name">Admin User</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="admin-email">admin@sangeetdistribution.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content admin-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">DSP Integration Management</h1>
+                <p class="text-gray-600">Manage digital service provider integrations and delivery settings</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary mr-2" id="refresh-status-btn">
+                    <i class="fas fa-sync-alt mr-2"></i> Refresh Status
+                </button>
+                <button class="btn btn-primary" id="add-dsp-btn">
+                    <i class="fas fa-plus mr-2"></i> Add New DSP
+                </button>
+            </div>
+        </div>
+        
+        <!-- DSP Status Overview -->
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Active DSPs</h3>
+                            <i class="fas fa-plug text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">12</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 1
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Last added: Resso (2 weeks ago)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">API Calls Today</h3>
+                            <i class="fas fa-exchange-alt text-accent" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">24,856</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 12.3%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">vs. 22,134 yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Delivery Success</h3>
+                            <i class="fas fa-check-circle text-success" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">98.7%</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 0.5%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Last 30 days average</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">API Issues</h3>
+                            <i class="fas fa-exclamation-triangle text-warning" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">2</div>
+                            <div class="text-danger ml-2">
+                                <i class="fas fa-arrow-up"></i> 1
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Gaana, YouTube Music</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DSP Integration Management -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="card-title">DSP Integrations</h3>
+                    <div class="d-flex">
+                        <div class="form-group mb-0 mr-2">
+                            <input type="text" id="dsp-search" class="form-control form-control-sm" placeholder="Search DSPs...">
+                        </div>
+                        <div class="form-group mb-0">
+                            <select id="dsp-filter" class="form-control form-control-sm">
+                                <option value="all">All Status</option>
+                                <option value="online">Online</option>
+                                <option value="degraded">Degraded</option>
+                                <option value="offline">Offline</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-container">
+                    <table class="table" id="dsp-table">
+                        <thead>
+                            <tr>
+                                <th>DSP</th>
+                                <th>API Version</th>
+                                <th>Status</th>
+                                <th>Last Sync</th>
+                                <th>Delivery Time</th>
+                                <th>Success Rate</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="dsp-icon mr-2">
+                                            <i class="fab fa-spotify"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Spotify</div>
+                                            <div class="text-sm text-gray-600">Global</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>v2.1.0</td>
+                                <td><span class="status-badge status-live">Online</span></td>
+                                <td>15 min ago</td>
+                                <td>3-5 days</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="progress flex-grow-1 mr-2" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 99.2%"></div>
+                                        </div>
+                                        <div>99.2%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary mr-1" data-dsp="spotify">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info mr-1" data-dsp="spotify">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary" data-dsp="spotify">
+                                        <i class="fas fa-chart-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="dsp-icon mr-2">
+                                            <i class="fab fa-apple"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Apple Music</div>
+                                            <div class="text-sm text-gray-600">Global</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>v1.5.2</td>
+                                <td><span class="status-badge status-live">Online</span></td>
+                                <td>30 min ago</td>
+                                <td>3-7 days</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="progress flex-grow-1 mr-2" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 98.7%"></div>
+                                        </div>
+                                        <div>98.7%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary mr-1" data-dsp="apple">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info mr-1" data-dsp="apple">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary" data-dsp="apple">
+                                        <i class="fas fa-chart-line"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="dsp-icon mr-2">
+                                            <i class="fab fa-amazon"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Amazon Music</div>
+                                            <div class="text-sm text-gray-600">Global</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>v3.0.1</td>
+                                <td><span class="status-badge status-live">Online</span></td>
+                                <td>45 min ago</td>
+                                <td>5-7 days</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="progress flex-grow-1 mr-2" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 99.5%"></div>
+      
+(Content truncated due to size limit. Use line ranges to read in chunks)

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sangeet Distribution</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Admin</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link active">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="users.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    User Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="catalog.html" class="sidebar-link">
+                    <i class="fas fa-music sidebar-icon"></i>
+                    Catalog Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="dsp-integration.html" class="sidebar-link">
+                    <i class="fas fa-plug sidebar-icon"></i>
+                    DSP Integration
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalty Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="fraud.html" class="sidebar-link">
+                    <i class="fas fa-shield-alt sidebar-icon"></i>
+                    Fraud Detection
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    Release Approval
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="reports.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar sidebar-icon"></i>
+                    Reports
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-primary rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="admin-initials">AD</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="admin-name">Admin User</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="admin-email">admin@sangeetdistribution.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content admin-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Admin Dashboard</h1>
+                <p class="text-gray-600">Welcome to Sangeet Distribution Admin Panel</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary mr-2" id="refresh-data-btn">
+                    <i class="fas fa-sync-alt mr-2"></i> Refresh Data
+                </button>
+                <button class="btn btn-primary" id="system-status-btn">
+                    <i class="fas fa-server mr-2"></i> System Status
+                </button>
+            </div>
+        </div>
+        
+        <!-- Overview Cards -->
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Total Users</h3>
+                            <i class="fas fa-users text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">12,458</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 12.5%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+156 this week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Active Releases</h3>
+                            <i class="fas fa-compact-disc text-accent" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">45,892</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 8.3%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+723 this week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Monthly Revenue</h3>
+                            <i class="fas fa-rupee-sign text-success" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">₹32.5M</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 15.2%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+₹4.2M from last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Pending Reviews</h3>
+                            <i class="fas fa-clock text-warning" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">128</div>
+                            <div class="text-danger ml-2">
+                                <i class="fas fa-arrow-up"></i> 24.8%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+32 since yesterday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charts Row -->
+        <div class="row">
+            <div class="col-md-8 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="card-title">Revenue Trends</h3>
+                            <div>
+                                <select id="revenue-chart-period" class="form-control form-control-sm">
+                                    <option value="week">Last 7 Days</option>
+                                    <option value="month" selected>Last 30 Days</option>
+                                    <option value="quarter">Last 90 Days</option>
+                                    <option value="year">Last 12 Months</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="revenue-chart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="card-title">Revenue by DSP</h3>
+                            <div>
+                                <select id="dsp-chart-period" class="form-control form-control-sm">
+                                    <option value="month" selected>This Month</option>
+                                    <option value="quarter">This Quarter</option>
+                                    <option value="year">This Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="dsp-chart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activity and Alerts -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="card-title">Recent Activity</h3>
+                            <a href="#" class="text-primary">View All</a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon bg-primary">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="activity-title">New User Registration</h4>
+                                        <span class="activity-time">10 min ago</span>
+                                    </div>
+                                    <p class="activity-text">Rahul Sharma (rahul@example.com) created a new account</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon bg-accent">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="activity-title">New Release Submitted</h4>
+                                        <span class="activity-time">45 min ago</span>
+                                    </div>
+                                    <p class="activity-text">Priya Patel submitted "Monsoon Melodies" for review</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon bg-success">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="activity-title">Release Approved</h4>
+                                        <span class="activity-time">1 hour ago</span>
+                                    </div>
+                                    <p class="activity-text">Admin approved "Urban Echoes" by DJ Akash</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon bg-warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="activity-title">Potential Fraud Detected</h4>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                    <p class="activity-text">System flagged unusual activity for user ID #8752</p>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon bg-info">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="activity-title">Royalty Data Updated</h4>
+                                        <span class="activity-time">3 hours ago</span>
+                                    </div>
+                                    <p class="activity-text">March 2023 royalty data imported from all DSPs</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="card-title">System Alerts</h3>
+                            <a href="#" class="text-primary">View All</a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="alert-list">
+                            <li class="alert-item alert-critical">
+                                <div class="alert-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+  
+(Content truncated due to size limit. Use line ranges to read in chunks)

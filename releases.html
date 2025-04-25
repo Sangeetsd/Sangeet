@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Review - Sangeet Distribution Admin</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Admin</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="users.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    User Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="catalog.html" class="sidebar-link">
+                    <i class="fas fa-music sidebar-icon"></i>
+                    Catalog Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="dsp-integration.html" class="sidebar-link">
+                    <i class="fas fa-plug sidebar-icon"></i>
+                    DSP Integration
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalty Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="fraud.html" class="sidebar-link">
+                    <i class="fas fa-shield-alt sidebar-icon"></i>
+                    Fraud Detection
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link active">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    Release Approval
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="reports.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar sidebar-icon"></i>
+                    Reports
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-primary rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="admin-initials">AD</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="admin-name">Admin User</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="admin-email">admin@sangeetdistribution.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content admin-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Release Review & Approval</h1>
+                <p class="text-gray-600">Review, approve, and manage music releases</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary mr-2" id="export-releases-btn">
+                    <i class="fas fa-file-export mr-2"></i> Export Data
+                </button>
+                <button class="btn btn-primary" id="batch-process-btn">
+                    <i class="fas fa-tasks mr-2"></i> Batch Process
+                </button>
+            </div>
+        </div>
+        
+        <!-- Release Stats -->
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Pending Review</h3>
+                            <i class="fas fa-hourglass-half text-warning" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">28</div>
+                            <div class="text-danger ml-2">
+                                <i class="fas fa-arrow-up"></i> 12.5%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+5 since yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Approved Today</h3>
+                            <i class="fas fa-check-circle text-success" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">14</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 27.3%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+3 compared to yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Rejected Today</h3>
+                            <i class="fas fa-times-circle text-danger" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">3</div>
+                            <div class="text-danger ml-2">
+                                <i class="fas fa-arrow-up"></i> 50%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+1 compared to yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Avg. Review Time</h3>
+                            <i class="fas fa-clock text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">4.2h</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-down"></i> 15%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">-0.8h compared to last week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Release Review Tabs -->
+        <div class="card mb-4">
+            <div class="card-header p-0">
+                <ul class="nav nav-tabs" id="release-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending">Pending Review <span class="badge badge-warning ml-1">28</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="approved-tab" data-toggle="tab" href="#approved">Approved <span class="badge badge-success ml-1">156</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected">Rejected <span class="badge badge-danger ml-1">24</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="needs-update-tab" data-toggle="tab" href="#needs-update">Needs Update <span class="badge badge-info ml-1">12</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex">
+                        <div class="form-group mb-0 mr-2">
+                            <input type="text" id="release-search" class="form-control" placeholder="Search by title, artist, ISRC...">
+                        </div>
+                        <div class="form-group mb-0 mr-2">
+                            <select id="release-filter" class="form-control">
+                                <option value="all">All Types</option>
+                                <option value="single">Singles</option>
+                                <option value="album">Albums</option>
+                                <option value="ep">EPs</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline-primary" id="apply-filter-btn">
+                            <i class="fas fa-filter mr-2"></i> Apply Filter
+                        </button>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-secondary" id="bulk-action-btn">
+                            <i class="fas fa-cog mr-2"></i> Bulk Actions
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="release-tabs-content">
+                    <!-- Pending Review Tab -->
+                    <div class="tab-pane fade show active" id="pending">
+                        <div class="table-container">
+                            <table class="table" id="pending-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="select-all-pending">
+                                                <label class="custom-control-label" for="select-all-pending"></label>
+                                            </div>
+                                        </th>
+                                        <th>Release</th>
+                                        <th>Artist</th>
+                                        <th>Type</th>
+                                        <th>Tracks</th>
+                                        <th>Submitted</th>
+                                        <th>Priority</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input pending-checkbox" id="pending-1">
+                                                <label class="custom-control-label" for="pending-1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/40x40" alt="Release Cover" class="mr-2 rounded">
+                                                <div>
+                                                    <div class="font-medium">Summer Vibes</div>
+                                                    <div class="text-sm text-gray-600">ISRC: INZ201900123</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Rahul Sharma</td>
+                                        <td>Single</td>
+                                        <td>1</td>
+                                        <td>Apr 16, 2023 (2h ago)</td>
+                                        <td><span class="priority-badge priority-high">High</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-primary review-btn" data-id="1">
+                                                    <i class="fas fa-eye mr-1"></i> Review
+                                                </button>
+                                                <button class="btn btn-sm btn-success approve-btn" data-id="1">
+                                                    <i class="fas fa-check mr-1"></i> Approve
+                                                </button>
+                                                <button class="btn btn-sm btn-danger reject-btn" data-id="1">
+                                                    <i class="fas fa-times mr-1"></i> Reject
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input pending-checkbox" id="pending-2">
+                                                <label class="custom-control-label" for="pending-2"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/40x40" alt="Release Cover" class="mr-2 rounded">
+                                                <div>
+                                                    <div class="font-med
+(Content truncated due to size limit. Use line ranges to read in chunks)

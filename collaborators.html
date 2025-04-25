@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborators - Sangeet Distribution</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Distribution</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="upload.html" class="sidebar-link">
+                    <i class="fas fa-cloud-upload-alt sidebar-icon"></i>
+                    Upload Music
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    My Releases
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-line sidebar-icon"></i>
+                    Analytics
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalties
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="collaborators.html" class="sidebar-link active">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    Collaborators
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="support.html" class="sidebar-link">
+                    <i class="fas fa-headset sidebar-icon"></i>
+                    Support
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-accent rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="user-initials">JS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="user-name">John Smith</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="user-email">john@example.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Collaborators</h1>
+                <p class="text-gray-600">Manage your collaborators and split payments</p>
+            </div>
+            <div>
+                <button class="btn btn-accent" id="add-collaborator-btn">
+                    <i class="fas fa-plus mr-2"></i> Add Collaborator
+                </button>
+            </div>
+        </div>
+        
+        <!-- Collaborator Overview -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Total Collaborators</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">8</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Artists, producers, and songwriters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Active Splits</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">5</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Releases with active payment splits</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Pending Payments</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">₹3,450.25</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">To be distributed to collaborators</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaborators List -->
+        <div class="card mb-6">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">My Collaborators</h2>
+                <div>
+                    <input type="text" id="search-collaborators" class="form-control form-control-sm" placeholder="Search collaborators...">
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-container">
+                    <table class="table" id="collaborators-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="bg-primary rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-light font-bold">RM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="font-medium">Rahul Mehta</div>
+                                    <div class="text-sm text-gray-600">5 collaborations</div>
+                                </td>
+                                <td>Producer</td>
+                                <td>rahul@example.com</td>
+                                <td>+91 98765 43210</td>
+                                <td><span class="status-badge status-live">Verified</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdown-1">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-1">
+                                            <a href="#" class="dropdown-item view-collaborator" data-id="1">View Details</a>
+                                            <a href="#" class="dropdown-item">Edit Collaborator</a>
+                                            <a href="#" class="dropdown-item">View Payment History</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Remove Collaborator</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bg-success rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-light font-bold">PS</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="font-medium">Priya Singh</div>
+                                    <div class="text-sm text-gray-600">3 collaborations</div>
+                                </td>
+                                <td>Vocalist</td>
+                                <td>priya@example.com</td>
+                                <td>+91 87654 32109</td>
+                                <td><span class="status-badge status-live">Verified</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdown-2">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-2">
+                                            <a href="#" class="dropdown-item view-collaborator" data-id="2">View Details</a>
+                                            <a href="#" class="dropdown-item">Edit Collaborator</a>
+                                            <a href="#" class="dropdown-item">View Payment History</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Remove Collaborator</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bg-info rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-light font-bold">AK</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="font-medium">Amit Kumar</div>
+                                    <div class="text-sm text-gray-600">2 collaborations</div>
+                                </td>
+                                <td>Lyricist</td>
+                                <td>amit@example.com</td>
+                                <td>+91 76543 21098</td>
+                                <td><span class="status-badge status-live">Verified</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdown-3">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-3">
+                                            <a href="#" class="dropdown-item view-collaborator" data-id="3">View Details</a>
+                                            <a href="#" class="dropdown-item">Edit Collaborator</a>
+                                            <a href="#" class="dropdown-item">View Payment History</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Remove Collaborator</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bg-warning rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-light font-bold">NP</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="font-medium">Neha Patel</div>
+                                    <div class="text-sm text-gray-600">1 collaboration</div>
+                                </td>
+                                <td>Guitarist</td>
+                                <td>neha@example.com</td>
+                                <td>+91 65432 10987</td>
+                                <td><span class="status-badge status-live">Verified</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" id="dropdown-4">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-4">
+                                            <a href="#" class="dropdown-item view-collaborator" data-id="4">View Details</a>
+                                            <a href="#" class="dropdown-item">Edit Collaborator</a>
+                                            <a href="#" class="dropdown-item">View Payment History</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item text-danger">Remove Collaborator</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bg-danger rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="text-light font-bold">VJ</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="font-medium">Vikram Joshi</div>
+                                    <div class="text-sm text-gray-600">2 collaborations</div>
+                                </td>
+                                <td>Drummer</td>
+                                <td>vikram@example.com</td>
+              
+(Content truncated due to size limit. Use line ranges to read in chunks)

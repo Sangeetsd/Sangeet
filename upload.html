@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Music - Sangeet Distribution</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Distribution</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="upload.html" class="sidebar-link active">
+                    <i class="fas fa-cloud-upload-alt sidebar-icon"></i>
+                    Upload Music
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    My Releases
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-line sidebar-icon"></i>
+                    Analytics
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalties
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="collaborators.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    Collaborators
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="support.html" class="sidebar-link">
+                    <i class="fas fa-headset sidebar-icon"></i>
+                    Support
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-accent rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="user-initials">JS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="user-name">John Smith</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="user-email">john@example.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Upload Music</h1>
+                <p class="text-gray-600">Distribute your music to 150+ streaming platforms worldwide</p>
+            </div>
+        </div>
+        
+        <!-- Upload Steps -->
+        <div class="card mb-6">
+            <div class="card-body p-0">
+                <div class="d-flex flex-wrap">
+                    <div class="col-md-3 p-0">
+                        <div class="p-4 border-right border-bottom border-gray-200 h-100 bg-gray-100">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-accent rounded-full d-flex align-items-center justify-content-center mr-3" style="width: 30px; height: 30px;">
+                                    <span class="text-light font-bold">1</span>
+                                </div>
+                                <h3 class="mb-0 text-lg">Release Type</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 p-0">
+                        <div class="p-4 border-right border-bottom border-gray-200 h-100">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-gray-400 rounded-full d-flex align-items-center justify-content-center mr-3" style="width: 30px; height: 30px;">
+                                    <span class="text-light font-bold">2</span>
+                                </div>
+                                <h3 class="mb-0 text-lg">Upload Files</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 p-0">
+                        <div class="p-4 border-right border-bottom border-gray-200 h-100">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-gray-400 rounded-full d-flex align-items-center justify-content-center mr-3" style="width: 30px; height: 30px;">
+                                    <span class="text-light font-bold">3</span>
+                                </div>
+                                <h3 class="mb-0 text-lg">Metadata</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 p-0">
+                        <div class="p-4 border-bottom border-gray-200 h-100">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-gray-400 rounded-full d-flex align-items-center justify-content-center mr-3" style="width: 30px; height: 30px;">
+                                    <span class="text-light font-bold">4</span>
+                                </div>
+                                <h3 class="mb-0 text-lg">Review & Submit</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 1: Release Type -->
+        <div class="card mb-6" id="step-1">
+            <div class="card-header">
+                <h2 class="mb-0">Choose Release Type</h2>
+            </div>
+            <div class="card-body p-6">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-4 cursor-pointer release-type-card" data-type="single">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-music fa-3x text-accent"></i>
+                            </div>
+                            <h3 class="text-xl text-center mb-2">Single</h3>
+                            <p class="text-gray-600 text-center mb-0">One track release</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-4 cursor-pointer release-type-card" data-type="ep">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-compact-disc fa-3x text-accent"></i>
+                            </div>
+                            <h3 class="text-xl text-center mb-2">EP</h3>
+                            <p class="text-gray-600 text-center mb-0">2-6 track release</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-4 cursor-pointer release-type-card" data-type="album">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-record-vinyl fa-3x text-accent"></i>
+                            </div>
+                            <h3 class="text-xl text-center mb-2">Album</h3>
+                            <p class="text-gray-600 text-center mb-0">7+ track release</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="mb-3">Release Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="release-title" class="form-label">Release Title</label>
+                                <input type="text" id="release-title" class="form-control" placeholder="Enter release title">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="primary-artist" class="form-label">Primary Artist</label>
+                                <input type="text" id="primary-artist" class="form-control" placeholder="Enter artist name">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="release-date" class="form-label">Release Date</label>
+                                <input type="date" id="release-date" class="form-control" min="2023-04-30">
+                                <small class="text-gray-500">Must be at least 10 days from today</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="primary-genre" class="form-label">Primary Genre</label>
+                                <select id="primary-genre" class="form-control">
+                                    <option value="">Select a genre</option>
+                                    <option value="pop">Pop</option>
+                                    <option value="rock">Rock</option>
+                                    <option value="hip-hop">Hip-Hop/Rap</option>
+                                    <option value="rnb">R&B/Soul</option>
+                                    <option value="electronic">Electronic/Dance</option>
+                                    <option value="indie">Indie</option>
+                                    <option value="folk">Folk</option>
+                                    <option value="classical">Classical</option>
+                                    <option value="jazz">Jazz</option>
+                                    <option value="country">Country</option>
+                                    <option value="blues">Blues</option>
+                                    <option value="metal">Metal</option>
+                                    <option value="reggae">Reggae</option>
+                                    <option value="world">World</option>
+                                    <option value="latin">Latin</option>
+                                    <option value="bollywood">Bollywood</option>
+                                    <option value="devotional">Devotional</option>
+                                    <option value="punjabi">Punjabi</option>
+                                    <option value="tamil">Tamil</option>
+                                    <option value="telugu">Telugu</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="release-language" class="form-label">Primary Language</label>
+                        <select id="release-language" class="form-control">
+                            <option value="">Select a language</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="english">English</option>
+                            <option value="punjabi">Punjabi</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="telugu">Telugu</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="marathi">Marathi</option>
+                            <option value="gujarati">Gujarati</option>
+                            <option value="kannada">Kannada</option>
+                            <option value="malayalam">Malayalam</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="instrumental">Instrumental</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mt-6 d-flex justify-content-end">
+                    <button id="next-step-btn" class="btn btn-accent">
+                        Continue to Upload Files <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 2: Upload Files (Hidden initially) -->
+        <div class="card mb-6 d-none" id="step-2">
+            <div class="card-header">
+                <h2 class="mb-0">Upload Files</h2>
+            </div>
+            <div class="card-body p-6">
+                <!-- Cover Art Upload -->
+                <div class="row mb-6">
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Cover Art</h3>
+                        <p class="text-gray-600 mb-4">Upload a square image (minimum 3000x3000 pixels) in JPG or PNG format.</p>
+                        
+                        <div class="upload-area" id="cover-art-upload">
+                            <div class="upload-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h4 class="upload-text">Drag & drop your cover art here</h4>
+                            <p class="upload-hint">or click to browse files</p>
+                            <input type="file" id="cover-art-input" class="d-none" accept="image/jpeg, image/png">
+                        </div>
+                        
+                        <div class="mt-3">
+                            <ul class="text-sm text-gray-600">
+                                <li>Square image (1:1 aspect ratio)</li>
+                                <li>Minimum 3000x3000 pixels</li>
+                                <li>Maximum file size: 10MB</li>
+                                <li>JPG or PNG format</li>
+                                <li>No text or logos on the artwork</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-none" id="cover-art-preview-container">
+                  
+(Content truncated due to size limit. Use line ranges to read in chunks)

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sangeet Distribution</title>
+    <link rel="stylesheet" href="css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-primary sticky-top shadow-md">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <span class="font-bold">Sangeet</span> <span class="text-secondary-light">Distribution</span>
+            </a>
+            <div class="d-none d-md-block">
+                <ul class="navbar-nav">
+                    <li><a href="index.html#distribute" class="nav-link">Distribute Music</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="login.html" class="nav-link ml-4 btn btn-accent btn-sm">Log In / Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="d-md-none">
+                <button id="mobile-menu-toggle" class="btn btn-sm btn-outline-light">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="d-none bg-primary position-fixed top-0 left-0 w-100 h-100 z-40" style="padding-top: 80px;">
+        <div class="container">
+            <ul class="list-unstyled">
+                <li class="py-3 border-bottom border-gray-700"><a href="index.html#distribute" class="text-light text-lg">Distribute Music</a></li>
+                <li class="py-3 border-bottom border-gray-700"><a href="index.html#features" class="text-light text-lg">Features</a></li>
+                <li class="py-3 border-bottom border-gray-700"><a href="index.html#pricing" class="text-light text-lg">Pricing</a></li>
+                <li class="py-3 border-bottom border-gray-700"><a href="index.html#about" class="text-light text-lg">About</a></li>
+                <li class="py-3"><a href="login.html" class="btn btn-accent btn-block">Log In / Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sign Up Section -->
+    <section class="py-16">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-lg animate-slideInUp">
+                        <div class="card-body p-8">
+                            <div class="text-center mb-6">
+                                <h2 class="mb-2">Create Your Account</h2>
+                                <p class="text-gray-600">Join Sangeet Distribution and start distributing your music worldwide</p>
+                            </div>
+                            
+                            <!-- Sign Up Form -->
+                            <form id="signup-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="first-name" class="form-label">First Name</label>
+                                            <input type="text" id="first-name" class="form-control" placeholder="John" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="last-name" class="form-label">Last Name</label>
+                                            <input type="text" id="last-name" class="form-control" placeholder="Doe" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                                    <small class="text-gray-500">Password must be at least 8 characters long with at least one uppercase letter, one lowercase letter, and one number</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                                    <input type="password" id="confirm-password" class="form-control" placeholder="••••••••" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Account Type</label>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card p-4 cursor-pointer account-type-card" data-type="artist">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="mr-3">
+                                                        <i class="fas fa-music fa-2x text-accent"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="mb-1">Artist</h4>
+                                                        <p class="text-gray-600 mb-0 text-sm">For individual musicians and artists</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card p-4 cursor-pointer account-type-card" data-type="label">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="mr-3">
+                                                        <i class="fas fa-building fa-2x text-accent"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="mb-1">Label</h4>
+                                                        <p class="text-gray-600 mb-0 text-sm">For music labels and agencies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="account-type" value="artist">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="terms" class="form-check-input" required>
+                                        <label for="terms" class="form-check-label">I agree to the <a href="#" class="text-accent">Terms of Service</a> and <a href="#" class="text-accent">Privacy Policy</a></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-accent btn-block">Create Account</button>
+                                </div>
+                            </form>
+                            
+                            <div class="divider">
+                                <span class="bg-light px-2 text-gray-500">Or sign up with</span>
+                            </div>
+                            
+                            <!-- Social Sign Up Buttons -->
+                            <div class="d-flex justify-content-between mt-4">
+                                <button class="btn btn-outline-dark flex-grow-1 mr-2">
+                                    <i class="fab fa-google mr-2"></i> Google
+                                </button>
+                                <button class="btn btn-outline-dark flex-grow-1 ml-2">
+                                    <i class="fab fa-facebook-f mr-2"></i> Facebook
+                                </button>
+                            </div>
+                            
+                            <!-- Login Link -->
+                            <div class="text-center mt-6">
+                                <p class="text-gray-600">Already have an account? <a href="login.html" class="text-accent font-medium">Log In</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-12 pb-6">
+        <div class="container">
+            <div class="row mb-8">
+                <div class="col-md-4 mb-6">
+                    <h3 class="text-xl mb-4">Sangeet Distribution</h3>
+                    <p class="text-gray-400 mb-4">The professional music distribution platform for independent artists and labels.</p>
+                    <div class="d-flex">
+                        <a href="#" class="mr-3 text-gray-400 hover:text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="mr-3 text-gray-400 hover:text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="mr-3 text-gray-400 hover:text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="mr-3 text-gray-400 hover:text-light"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-light"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-6">
+                    <h4 class="text-lg mb-4">Company</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Press</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-6">
+                    <h4 class="text-lg mb-4">Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Distribution</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Analytics</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Publishing</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Licensing</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-6">
+                    <h4 class="text-lg mb-4">Support</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Community</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Tutorials</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-6">
+                    <h4 class="text-lg mb-4">Legal</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">DMCA</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-light">Licensing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-gray-800 pt-6">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <p class="text-gray-500 text-sm">© 2023 Sangeet Distribution. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <img src="images/payment-methods.png" alt="Payment Methods" style="height: 30px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/firebase-service.js"></script>
+    <script src="js/auth-service.js"></script>
+    <script src="js/signup.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Firebase
+            const firebaseServices = window.sangeetApp.initializeFirebase();
+            
+            if (firebaseServices) {
+                const { auth, db } = firebaseServices;
+                
+                // Account type selection
+                const accountTypeCards = document.querySelectorAll('.account-type-card');
+                const accountTypeInput = document.getElementById('account-type');
+                
+                accountTypeCards.forEach(card => {
+                    card
+(Content truncated due to size limit. Use line ranges to read in chunks)

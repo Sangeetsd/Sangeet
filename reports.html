@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSP Delivery Logs - Sangeet Distribution Admin</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Admin</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="users.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    User Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="catalog.html" class="sidebar-link">
+                    <i class="fas fa-music sidebar-icon"></i>
+                    Catalog Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="dsp-integration.html" class="sidebar-link">
+                    <i class="fas fa-plug sidebar-icon"></i>
+                    DSP Integration
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalty Management
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="fraud.html" class="sidebar-link">
+                    <i class="fas fa-shield-alt sidebar-icon"></i>
+                    Fraud Detection
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    Release Approval
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="reports.html" class="sidebar-link active">
+                    <i class="fas fa-chart-bar sidebar-icon"></i>
+                    DSP Delivery Logs
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-primary rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="admin-initials">AD</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="admin-name">Admin User</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="admin-email">admin@sangeetdistribution.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content admin-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">DSP Delivery Logs</h1>
+                <p class="text-gray-600">Monitor and manage delivery status across all digital service providers</p>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary mr-2" id="export-logs-btn">
+                    <i class="fas fa-file-export mr-2"></i> Export Logs
+                </button>
+                <button class="btn btn-primary" id="refresh-status-btn">
+                    <i class="fas fa-sync mr-2"></i> Refresh Status
+                </button>
+            </div>
+        </div>
+        
+        <!-- DSP Stats -->
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Deliveries Today</h3>
+                            <i class="fas fa-truck text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">42</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 15.3%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+6 compared to yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Success Rate</h3>
+                            <i class="fas fa-check-circle text-success" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">94.7%</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-up"></i> 2.1%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+1.2% compared to last week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Failed Deliveries</h3>
+                            <i class="fas fa-times-circle text-danger" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">8</div>
+                            <div class="text-danger ml-2">
+                                <i class="fas fa-arrow-up"></i> 33.3%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">+2 compared to yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="card-title">Avg. Delivery Time</h3>
+                            <i class="fas fa-clock text-warning" style="font-size: 24px;"></i>
+                        </div>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">3.2h</div>
+                            <div class="text-success ml-2">
+                                <i class="fas fa-arrow-down"></i> 12%
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-2">-0.4h compared to last week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DSP Status Overview -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">DSP Status Overview</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <canvas id="dspStatusChart" height="300"></canvas>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="table-container">
+                            <table class="table" id="dsp-status-table">
+                                <thead>
+                                    <tr>
+                                        <th>DSP</th>
+                                        <th>Status</th>
+                                        <th>Success Rate</th>
+                                        <th>Avg. Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="Spotify" class="mr-2 rounded">
+                                                <span>Spotify</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-operational">Operational</span></td>
+                                        <td>98.2%</td>
+                                        <td>2.5h</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-logs-btn" data-dsp="spotify">
+                                                <i class="fas fa-eye mr-1"></i> View Logs
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="Apple Music" class="mr-2 rounded">
+                                                <span>Apple Music</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-operational">Operational</span></td>
+                                        <td>97.5%</td>
+                                        <td>3.1h</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-logs-btn" data-dsp="apple">
+                                                <i class="fas fa-eye mr-1"></i> View Logs
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="Amazon Music" class="mr-2 rounded">
+                                                <span>Amazon Music</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-operational">Operational</span></td>
+                                        <td>96.8%</td>
+                                        <td>2.8h</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-logs-btn" data-dsp="amazon">
+                                                <i class="fas fa-eye mr-1"></i> View Logs
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="YouTube Music" class="mr-2 rounded">
+                                                <span>YouTube Music</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-degraded">Degraded</span></td>
+                                        <td>85.3%</td>
+                                        <td>4.7h</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-logs-btn" data-dsp="youtube">
+                                                <i class="fas fa-eye mr-1"></i> View Logs
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="JioSaavn" class="mr-2 rounded">
+                                                <span>JioSaavn</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-operational">Operational</span></td>
+                                        <td>94.2%</td>
+                                        <td>3.5h</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-logs-btn" data-dsp="jiosaavn">
+                                                <i class="fas fa-eye mr-1"></i> View Logs
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://via.placeholder.com/24x24" alt="Wynk Music" class="mr-2 rounded">
+                                                <span>Wynk Music</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-operational">Operational</span></td>
+                                        <td>93.8%</td>
+                                        <td>3.2h</td>
+                                        <td>
+                                            <button class="btn btn-sm 
+(Content truncated due to size limit. Use line ranges to read in chunks)

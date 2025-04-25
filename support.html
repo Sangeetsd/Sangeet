@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Sangeet Distribution</title>
+    <link rel="stylesheet" href="../css/stailisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="d-flex align-items-center">
+                <span class="font-bold text-xl">Sangeet</span> <span class="text-secondary-light ml-1">Distribution</span>
+            </a>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="upload.html" class="sidebar-link">
+                    <i class="fas fa-cloud-upload-alt sidebar-icon"></i>
+                    Upload Music
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="releases.html" class="sidebar-link">
+                    <i class="fas fa-compact-disc sidebar-icon"></i>
+                    My Releases
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-line sidebar-icon"></i>
+                    Analytics
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="royalties.html" class="sidebar-link">
+                    <i class="fas fa-money-bill-wave sidebar-icon"></i>
+                    Royalties
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="collaborators.html" class="sidebar-link">
+                    <i class="fas fa-users sidebar-icon"></i>
+                    Collaborators
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="support.html" class="sidebar-link active">
+                    <i class="fas fa-headset sidebar-icon"></i>
+                    Support
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    Settings
+                </a>
+            </li>
+        </ul>
+        
+        <div class="mt-auto pt-6 border-top border-gray-700">
+            <div class="px-4 py-2">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="bg-accent rounded-full d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <span class="text-light font-bold" id="user-initials">JS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-light mb-0" id="user-name">John Smith</h4>
+                        <p class="text-gray-400 text-sm mb-0" id="user-email">john@example.com</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="logout-btn" class="btn btn-sm btn-outline-light">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <div class="dashboard-header">
+            <div>
+                <h1 class="dashboard-title">Support</h1>
+                <p class="text-gray-600">Get help with your account and releases</p>
+            </div>
+            <div>
+                <button class="btn btn-accent" id="new-ticket-btn">
+                    <i class="fas fa-plus mr-2"></i> New Support Ticket
+                </button>
+            </div>
+        </div>
+        
+        <!-- Support Overview -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Active Tickets</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">2</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Tickets awaiting resolution</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Average Response Time</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">4.5 hrs</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">For your recent tickets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Knowledge Base</h3>
+                        <div class="d-flex align-items-end">
+                            <div class="text-3xl font-bold">120+</div>
+                        </div>
+                        <p class="text-gray-600 mt-2">Articles to help you</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Support Tabs -->
+        <div class="card mb-6">
+            <div class="card-header p-0">
+                <ul class="nav nav-tabs" id="support-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tickets-tab" data-toggle="tab" href="#tickets">My Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="knowledge-tab" data-toggle="tab" href="#knowledge">Knowledge Base</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="faq-tab" data-toggle="tab" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="support-tabs-content">
+                    <!-- My Tickets Tab -->
+                    <div class="tab-pane fade show active" id="tickets">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0">My Support Tickets</h3>
+                            <div>
+                                <select id="ticket-filter" class="form-control form-control-sm">
+                                    <option value="all">All Tickets</option>
+                                    <option value="open">Open Tickets</option>
+                                    <option value="closed">Closed Tickets</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="table" id="tickets-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Subject</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Last Updated</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#SD-1234</td>
+                                        <td>Issue with royalty payment</td>
+                                        <td>Payments</td>
+                                        <td><span class="status-badge status-in-review">Open</span></td>
+                                        <td>2 hours ago</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-ticket" data-id="1234">
+                                                <i class="fas fa-eye mr-1"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#SD-1233</td>
+                                        <td>Release not appearing on Spotify</td>
+                                        <td>Distribution</td>
+                                        <td><span class="status-badge status-in-review">Open</span></td>
+                                        <td>1 day ago</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-ticket" data-id="1233">
+                                                <i class="fas fa-eye mr-1"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#SD-1232</td>
+                                        <td>Need to update artist profile</td>
+                                        <td>Account</td>
+                                        <td><span class="status-badge status-live">Resolved</span></td>
+                                        <td>3 days ago</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-ticket" data-id="1232">
+                                                <i class="fas fa-eye mr-1"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#SD-1231</td>
+                                        <td>Question about collaborator splits</td>
+                                        <td>Royalties</td>
+                                        <td><span class="status-badge status-live">Resolved</span></td>
+                                        <td>1 week ago</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-ticket" data-id="1231">
+                                                <i class="fas fa-eye mr-1"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#SD-1230</td>
+                                        <td>How to change release date</td>
+                                        <td>Distribution</td>
+                                        <td><span class="status-badge status-live">Resolved</span></td>
+                                        <td>2 weeks ago</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary view-ticket" data-id="1230">
+                                                <i class="fas fa-eye mr-1"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Knowledge Base Tab -->
+                    <div class="tab-pane fade" id="knowledge">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0">Knowledge Base</h3>
+                            <div>
+                                <input type="text" id="kb-search" class="form-control form-control-sm" placeholder="Search articles...">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Getting Started</h4>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">How to create an account</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Uploading your first release</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Understanding the dashboard</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Setting up payment methods</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="text-accent">Inviting collaborators</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Distribution</h4>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Supported platforms</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Release requirements</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Artwork guidelines</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#" class="text-accent">Audio file specifications</a>
+                                            </li>
+                                            <li>
+                            
+(Content truncated due to size limit. Use line ranges to read in chunks)
